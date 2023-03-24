@@ -3,8 +3,8 @@ import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In\n & Grow Your Business',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: bold
@@ -49,6 +49,13 @@ class SignInPage extends StatelessWidget {
               children: [
                 // NOTE : EMAIL INPUT
                 CustomFormsField(
+                  title: 'Fullname'
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                // NOTE : EMAIL INPUT
+                CustomFormsField(
                   title: 'Email Address'
                 ),
                 const SizedBox(
@@ -60,28 +67,16 @@ class SignInPage extends StatelessWidget {
                   isObsecure: true,
                 ),
                 const SizedBox(
-                  height: 8,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                          onPressed: (){
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero
-                          ),
-                          child: Text(
-                            'Forgot Password',
-                            style: blueTextStyle,
-                          ),
-                        ),
-                ),
-                const SizedBox(
                   height: 30,
                 ),
                 CustomButtonFilled(
-                  title: 'Sign In',
-                  onPressed: (){},
+                  title: 'Sign Up',
+                  onPressed: (){
+                    Navigator.pushNamedAndRemoveUntil(
+                      context, 
+                      '/sign-up-set-photo', 
+                      (route) => false);
+                  },
                 )
               ],
             ),
@@ -90,9 +85,9 @@ class SignInPage extends StatelessWidget {
             height: 50,
           ),
           CustomTextWidget(
-            title: 'Create New Account',
+            title: 'Sign In',
             onPressed: (){
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
           )
         ],

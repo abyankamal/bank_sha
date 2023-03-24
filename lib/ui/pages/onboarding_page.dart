@@ -1,5 +1,4 @@
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/ui/pages/signin_page.dart';
 import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +104,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       CustomButtonFilled(
                         title: 'Get Started',
                         onPressed: (){
-
+                          Navigator.pushNamedAndRemoveUntil(
+                            context, 
+                            '/sign-up', 
+                            (route) => false
+                          );
                         },
                       ),
                       const SizedBox(
@@ -116,10 +119,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         height: 24,
                         child: TextButton(
                           onPressed: (){
-                            Navigator.push(
-                              context, 
-                              MaterialPageRoute(builder: (context) => const SignInPage())
-                            );
+                            Navigator.pushNamed(context, '/sign-in');
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero
