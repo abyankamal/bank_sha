@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/home_latest_transactions_item.dart';
+import 'package:bank_sha/ui/widgets/home_services_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -77,7 +79,10 @@ class HomePage extends StatelessWidget {
         ),
         children: [
           buildProfile(),
-          buildWalletCard()
+          buildWalletCard(),
+          buildLevel(),
+          buildServices(),
+          buildTransactions()
         ],
       ),
     );
@@ -197,6 +202,171 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildLevel(){
+    return Container(
+      margin: EdgeInsets.only(
+        top: 20
+      ),
+      padding: EdgeInsets.all(22),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: whiteColor
+        ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'Level 1',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '55% ',
+                style: greenTextStyle.copyWith(
+                  fontWeight: semibold
+                )
+              ),
+              Text(
+                'of Rp 20.000',
+                style: blackTextStyle.copyWith(
+                  fontWeight: semibold
+                )
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            child: LinearProgressIndicator(
+              minHeight: 5,
+              value: 0.55,
+              backgroundColor: lightBackgroundColor,
+              valueColor: AlwaysStoppedAnimation(greenColor),
+            ),
+          )
+        ],
+      )
+    );
+  }
+
+  Widget buildServices(){
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Do Something',
+            style: blackTextStyle.copyWith(
+              fontWeight: semibold
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HomeServicesItem(
+                iconUrl: 'assets/ic_topup.png',
+                title: 'Top Up',
+                onTap: (){},
+              ),
+              HomeServicesItem(
+                iconUrl: 'assets/ic_send.png',
+                title: 'Send',
+                onTap: (){},
+              ),
+              HomeServicesItem(
+                iconUrl: 'assets/ic_withdraw.png',
+                title: 'Withdraw',
+                onTap: (){},
+              ),
+              HomeServicesItem(
+                iconUrl: 'assets/ic_more.png',
+                title: 'More',
+                onTap: (){},
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildTransactions(){
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Latest Transaction',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semibold
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(
+              top: 14
+            ),
+            padding: const EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: whiteColor
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                HomeLatestTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat1.png', 
+                  title: 'Top Up', 
+                  time: 'Yesterday', 
+                  value: '+ 450.000'
+                ),
+                HomeLatestTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat2.png', 
+                  title: 'Cashback', 
+                  time: 'Sep 11', 
+                  value: '+ 22.000'
+                ),
+                HomeLatestTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat3.png', 
+                  title: 'Withdraw', 
+                  time: 'Sep 2', 
+                  value: '- 5.000'
+                ),
+                HomeLatestTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat4.png', 
+                  title: 'Transfer', 
+                  time: 'Aug 27', 
+                  value: '- 123.500'
+                ),
+                HomeLatestTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat5.png', 
+                  title: 'Electric', 
+                  time: 'Feb 18', 
+                  value: '- 12.350.000'
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
+
 
 
