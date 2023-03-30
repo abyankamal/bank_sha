@@ -1,6 +1,8 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/home_latest_transactions_item.dart';
 import 'package:bank_sha/ui/widgets/home_services_item.dart';
+import 'package:bank_sha/ui/widgets/home_tips_item.dart';
+import 'package:bank_sha/ui/widgets/home_users_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -82,7 +84,9 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildServices(),
-          buildTransactions()
+          buildTransactions(),
+          buildSendAgain(),
+          buildFriendlyTips()
         ],
       ),
     );
@@ -359,6 +363,103 @@ class HomePage extends StatelessWidget {
                   time: 'Feb 18', 
                   value: '- 12.350.000'
                 ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildSendAgain(){
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semibold
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                HomeUsersItem(
+                  imageUrl: 'assets/img_friend1.png', 
+                  username: 'yuanita'
+                ),
+                HomeUsersItem(
+                  imageUrl: 'assets/img_friend2.png', 
+                  username: 'jani'
+                ),
+                HomeUsersItem(
+                  imageUrl: 'assets/img_friend3.png', 
+                  username: 'urip'
+                ),
+                HomeUsersItem(
+                  imageUrl: 'assets/img_friend4.png', 
+                  username: 'masa'
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildFriendlyTips(){
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semibold
+            ),
+          ),
+          const SizedBox(
+            height: 14
+          ),
+          Center(
+            child: Wrap(
+              spacing: 17,
+              runSpacing: 18,
+              children: [
+              HomeTipsItem(
+              imageUrl: 'assets/img_tips1.png', 
+              title: 'Best tips for using a credit card', 
+              url: 'https://www.google.com/'
+              ),
+              HomeTipsItem(
+              imageUrl: 'assets/img_tips2.png', 
+              title: 'Spot the good pie of finance model', 
+              url: 'https://www.pub.dev/'
+              ),
+              HomeTipsItem(
+              imageUrl: 'assets/img_tips3.png', 
+              title: 'Great hack to get better advice', 
+              url: 'https://www.youtube.com/'
+              ),
+              HomeTipsItem(
+              imageUrl: 'assets/img_tips4.png', 
+              title: 'Some more penny buy this instead', 
+              url: 'https://www.facebook.com/'
+              ),
               ],
             ),
           )
