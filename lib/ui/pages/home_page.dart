@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
           buildProfile(context),
           buildWalletCard(),
           buildLevel(),
-          buildServices(),
+          buildServices(context),
           buildTransactions(),
           buildSendAgain(),
           buildFriendlyTips()
@@ -263,7 +263,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildServices(){
+  Widget buildServices(BuildContext context){
     return Container(
       margin: const EdgeInsets.only(
         top: 30
@@ -286,7 +286,9 @@ class HomePage extends StatelessWidget {
               HomeServicesItem(
                 iconUrl: 'assets/ic_topup.png',
                 title: 'Top Up',
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/topup');
+                },
               ),
               HomeServicesItem(
                 iconUrl: 'assets/ic_send.png',
@@ -396,7 +398,7 @@ class HomePage extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
+              children: const [
                 HomeUsersItem(
                   imageUrl: 'assets/img_friend1.png', 
                   username: 'yuanita'
