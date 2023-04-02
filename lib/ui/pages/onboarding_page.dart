@@ -136,7 +136,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       Container(
                         width: 12,
                         height: 12,
-                        margin: EdgeInsets.only(right: 10),
+                        margin: const EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: currentIndex == 0 ? blueColor : lightBackgroundColor
@@ -145,7 +145,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       Container(
                         width: 12,
                         height: 12,
-                        margin: EdgeInsets.only(right: 10),
+                        margin: const EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: currentIndex == 1 ? blueColor : lightBackgroundColor
@@ -154,7 +154,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       Container(
                         width: 12,
                         height: 12,
-                        margin: EdgeInsets.only(right: 10),
+                        margin: const EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: currentIndex == 2 ? blueColor : lightBackgroundColor

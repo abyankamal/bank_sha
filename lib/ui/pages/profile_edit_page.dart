@@ -11,7 +11,7 @@ class ProfileEditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Edit Profile'
         ),
       ),
@@ -24,7 +24,7 @@ class ProfileEditPage extends StatelessWidget {
             height: 40,
           ),
           Container(
-            padding: EdgeInsets.all(22),
+            padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20), 
               color: whiteColor
@@ -32,25 +32,25 @@ class ProfileEditPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomFormsField(
+                const CustomFormsField(
                   title: 'Username'
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                CustomFormsField(
+                const CustomFormsField(
                   title: 'Fullname'
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                CustomFormsField(
+                const CustomFormsField(
                   title: 'Email Address'
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                CustomFormsField(
+                const CustomFormsField(
                   title: 'Password',
                   isObsecure: true,
                 ),

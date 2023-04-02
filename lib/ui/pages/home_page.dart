@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
         color: whiteColor,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         clipBehavior: Clip.antiAlias,
         notchMargin: 6,
         elevation: 0,
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 24
         ),
         children: [
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
 
   Widget buildProfile(BuildContext context){
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 40.0
       ),
       child: Row(
@@ -108,7 +108,7 @@ class HomePage extends StatelessWidget {
                   fontSize: 16
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 2,
               ),
               Text(
@@ -127,7 +127,7 @@ class HomePage extends StatelessWidget {
             child: Container(
               width: 60,
               height: 60,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage('assets/img_profile.png') 
@@ -160,13 +160,13 @@ class HomePage extends StatelessWidget {
 
   Widget buildWalletCard(){
     return Container(
-      margin: EdgeInsets.only(top: 30),
+      margin: const EdgeInsets.only(top: 30),
       width: double.infinity,
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       height: 220,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
-        image: DecorationImage(
+        image: const DecorationImage(
           fit: BoxFit.cover,
           image: AssetImage('assets/img_bg_card.png')
         ),
@@ -181,7 +181,7 @@ class HomePage extends StatelessWidget {
                 fontWeight: medium
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             Text(
@@ -192,7 +192,7 @@ class HomePage extends StatelessWidget {
               letterSpacing: 6
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 21,
           ),
           Text(
@@ -213,10 +213,10 @@ class HomePage extends StatelessWidget {
 
   Widget buildLevel(){
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 20
       ),
-      padding: EdgeInsets.all(22),
+      padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: whiteColor
@@ -445,7 +445,7 @@ class HomePage extends StatelessWidget {
             child: Wrap(
               spacing: 17,
               runSpacing: 18,
-              children: [
+              children: const [
               HomeTipsItem(
               imageUrl: 'assets/img_tips1.png', 
               title: 'Best tips for using a credit card', 

@@ -17,11 +17,11 @@ class SignUpPage extends StatelessWidget {
           Container(
             width: 155,
             height: 50,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 100,
               bottom: 100
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/img_logo_light.png') 
               ),
